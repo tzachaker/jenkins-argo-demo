@@ -1,6 +1,10 @@
 pipeline {
-    agent any
-    environment {
+    agent {
+        docker {
+            image 'docker:latest'
+            args '-v /var/run/docker.sock:/var/run/docker.sock'
+        }
+    }    environment {
         DOCKER_HUB_USER = 'tzachaker'
         IMAGE_NAME = 'jenkins-argo-demo'
         IMAGE_TAG = "${env.BUILD_NUMBER}"
