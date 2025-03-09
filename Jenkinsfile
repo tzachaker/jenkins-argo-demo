@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git branch: 'main', url: 'https://github.com/your-username/jenkins-argo-demo.git'
+                git branch: 'main', url: 'https://github.com/tzachaker/jenkins-argo-demo.git'
             }
         }
         stage('Build Docker Image') {
